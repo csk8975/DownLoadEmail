@@ -1,5 +1,9 @@
 package com.detection.services;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import com.alibaba.fastjson.JSONObject;
 
 
@@ -12,17 +16,9 @@ import com.alibaba.fastjson.JSONObject;
  */
 
 public interface OwnerUnitService {
+    
+    public String getDataList() throws FileNotFoundException, IOException;
 
-    public JSONObject addOwnerUnit(String dutyTel, String dutyPerson, String ownerName, String email);
-    
-    public JSONObject deleteOwnerUnit(String dutyTel);
-    
-    public JSONObject getAllOwnerUnit();
-    
-    public JSONObject getOwnerUnitByName(String ownerName);
-    
-    public JSONObject getOwnerUnitByTel(String dutyTel);
-    
-    public JSONObject testFetchReport();
+    public JSONObject getJSONDataList();
     
 }

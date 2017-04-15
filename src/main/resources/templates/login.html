@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge, chorme=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>建筑消防隐患分析系统</title>
+<title>业主邮件列表下载</title>
 <link rel="icon" type="image/x-icon" th:href="@{/imgs/favicon.ico}" />
 <link rel="shortcut icon" type="image/x-icon" th:href="@{/imgs/favicon.ico}" />
 <link rel="bookmark" type="image/x-icon" th:href="@{/imgs/favicon.ico}" />
@@ -37,9 +37,6 @@
 <div class="wrapper">
     <div class="login-wrapper">
         <div class="loginBox animated fadeInDown">
-            <div class="login-logo mb20">
-                <img th:src="@{/imgs/login-logo-sm.png}" />
-            </div>
             <div class="login-content">
                 <form role="form" th:action="@{/login}">
                     <div class="login-tit mb20 oh">
@@ -51,10 +48,9 @@
                             <i class="iconfont icon-user pa"></i>
                             <input class="form-control" placeholder="请输入登录用户名" type="text" id="loginName">
                         </div>
-                        <div class="login-error font-red">请输入正确用户名</div>
                         <div class="form-group">
                             <i class="iconfont icon-lock pa"></i>
-                            <input class="form-control error" placeholder="请输入密码" type="password" id="userPassword"><!-- 填写错误给input加class：error -->
+                            <input class="form-control" placeholder="请输入密码" type="password" id="userPassword"><!-- 填写错误给input加class：error -->
                         </div>
                         <div class="login-auto oh">
                             <div class="checkbox-inline">
@@ -68,8 +64,6 @@
                     </div>
                 </form>
             </div>
-        </div>
-        <div class="loginFooter tc">数据权归属：天河消防安全委员会&nbsp;&nbsp;&nbsp;&nbsp;技术支持：广东广业开元科技有限公司
         </div>
     </div>
 </div>

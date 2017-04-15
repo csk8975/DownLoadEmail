@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-public interface OwnerUnitRepository extends JpaRepository<CrOwnerUnit, String> {
+public interface OwnerUnitRepository extends JpaRepository<CrOwnerUnit, Integer> {
     public List<CrOwnerUnit> findByOwnerName(String ownerName);
 
     public List<CrOwnerUnit> findByEmail(String email);

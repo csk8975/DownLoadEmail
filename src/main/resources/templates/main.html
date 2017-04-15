@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head th:with="title=${'业主邮件列表'}" th:include="template/template :: head">
+</head>
+<body class="fixed-sidebar">
+    <div id="wrapper">
+        <!--/*/ <th:block th:include="template/template :: bodypart"></th:block> /*/-->
+        <div class="content-wrapper">
+            <section class="main-content animated fadeInRight">
+                <div class="content">
+                    <!--/section -->
+                    <div class="section">
+                        <div class="title">
+                            <h1>邮件列表</h1>
+                            <div class="toolbar fr">
+                                <!-- <a class="btn btn-default btn-batchdelete" th:href="@{javascript:;}">
+                                    <i class="iconfont icon-trash fl mr5"></i>批量删除
+                                </a> 
+                                <a class="btn btn-default btn-export" th:href="@{javascript:;}">
+                                    <i class="iconfont icon-export fl mr5"></i>导出报告
+                                </a> -->
+                                <a id = "btn-import-check-report" class="btn btn-default btn-import"
+                                    th:href="@{/downloadExcel}"> <i
+                                    class="iconfont icon-import fl mr5"></i>下载excel
+                                </a> 
+                            </div>
+                        </div>
+                        <div class="sectionMain">
+                            <table id="emailListTable"
+                                class="cell-border table table-hover table-striped table-bordered"
+                                cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>邮箱地址</th>
+                                        <th>业主名称</th>
+                                        <th>注册时间</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <!--/section -->
+                    <!-- Content End -->
+                </div>
+            </section>
+        </div>
+    </div>
+    <!--/*/ <th:block th:include="template/template :: footerpart"></th:block> /*/-->
+    <script th:src="@{/js/maildown.js}"></script>
+</body>
+</html>

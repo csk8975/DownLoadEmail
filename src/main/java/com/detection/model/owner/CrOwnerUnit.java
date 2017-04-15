@@ -1,40 +1,34 @@
 package com.detection.model.owner;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-
-import com.detection.model.report.entities.CrCheckRecord;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="owner_unit")
 public class CrOwnerUnit {
 
     @Id
+    @GeneratedValue
+    private int id;
+    
     private String dutyTel;
 
     private String ownerName;
 
     private String email;
 
+    private long timeStamp;
+    
     private String dutyPerson;
 
     private String token;
 
     private String authorizedReportNum;
     
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "dutyTel")
-    private List<CrCheckRecord> checkRecords = new ArrayList<CrCheckRecord>();
-
     private Date registTime;
     
     private Date loginTime;
@@ -85,13 +79,6 @@ public class CrOwnerUnit {
         this.token = token;
     }
 
-    public List<CrCheckRecord> getCheckRecords() {
-        return checkRecords;
-    }
-
-    public void setCheckRecords(List<CrCheckRecord> checkRecords) {
-        this.checkRecords = checkRecords;
-    }
 
     public Date getRegistTime() {
         return registTime;
@@ -125,22 +112,21 @@ public class CrOwnerUnit {
         this.authorizedReportNum = authorizedReportNum;
     }
 
-    public void addOneCheckRecord(CrCheckRecord item) {
-        if (item != null) {
-            this.checkRecords.add(item);
-        }
+    public int getId() {
+        return id;
     }
-    
-    public boolean hasRecord(String reportNum){
-        boolean result = false;
-        Iterator<CrCheckRecord> it = checkRecords.iterator();
-        while(it.hasNext()){
-            if(it.next().getReportNum().equals(reportNum)){
-                result = true;
-                break;
-            }
-        }
-        return result;
+
+    public void setId(int id) {
+        this.id = id;
     }
+
+    public long getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(long timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
 
 }

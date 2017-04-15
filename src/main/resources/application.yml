@@ -1,7 +1,7 @@
 spring:
   profiles:
     active:
-      - dev
+      - desklocal
   thymeleaf:
     mode: LEGACYHTML5
 
@@ -9,26 +9,25 @@ spring:
     multipart:
       max-file-size: 100MB
       max-request-size: 100MB
-  redis:
-    port: 6379
-    host: localhost
 server: 
-  context-path: /third
-fire:
-  default:
-    riskWeight:
-      levelA: 9
-      levelB: 5
-      levelC: 1
-    riskLevel:
-      firstLevelBoundary: 25.0
-      secondLevelBoundary: 65.0
-      thirdLevelBoundary: 85.0
+  context-path: /downemail
 
-isDebug: false
-detectionLevelPrefix: 危险等级
-reportNumForDemo: 16GJA153
-uploadPath: reportUploads/
+
+---
+spring:
+  profiles: alitest
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/fire?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root12345
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+server:
+  port: 8080
 
 ---
 spring:

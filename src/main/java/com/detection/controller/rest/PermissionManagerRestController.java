@@ -73,18 +73,5 @@ public class PermissionManagerRestController {
         
     }
     
-    @RequestMapping(value = { "/submitNewPass" }, method = RequestMethod.GET)
-    public ModelAndView submitNewPass(@RequestParam String oldPass,@RequestParam String newPass1,@RequestParam String newPass2, HttpServletRequest request){
-        String resultPath = "redirect:changePassword";
-        JSONObject result = new JSONObject();
-        result = userControlService.changePassword((String)request.getSession().getAttribute("userName"),oldPass,newPass1,newPass2);
-        if(result.getIntValue("code")==200){
-            resultPath="redirect:main";
-        }
-        ModelAndView mv = new ModelAndView(resultPath);
-        mv.addObject("result", result);
-        return mv;
-        
-    }
 
 }
